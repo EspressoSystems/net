@@ -13,7 +13,7 @@ commit = { git = "ssh://git@github.com/SpectrumXYZ/commit.git", rev = "f48cd52c5
 futures = "0.3.16"
 generic-array = { version = "0.14.4", features = ["serde"] }
 itertools = "0.10.1"
-jf-cap = { features=["std"], git = "ssh://git@github.com/SpectrumXYZ/cap.git", rev = "5d9f71ea796a3107700809bd0cd343ad48bb5166" }
+jf-cap = { features=["std"], git = "ssh://git@github.com/SpectrumXYZ/cap.git", rev = "cba0b2fc682606b0a118b320d41f718c525b4192" }
 jf-utils = { features=["std"], git = "ssh://git@github.com/SpectrumXYZ/jellyfish.git" }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0.61"
