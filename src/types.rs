@@ -2,7 +2,7 @@ use ark_serialize::*;
 use commit::{Commitment, Committable};
 use fmt::{Debug, Display, Formatter};
 use generic_array::{ArrayLength, GenericArray};
-use jf_aap::{
+use jf_cap::{
     structs::{ReceiverMemo, RecordCommitment},
     Signature,
 };
@@ -40,29 +40,29 @@ pub struct BlockId(pub usize);
 #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize, PartialEq, Eq)]
 pub struct TransactionId(pub BlockId, pub usize);
 
-// UserAddress from jf_aap is just a type alias for VerKey, which serializes with the tag VERKEY,
+// UserAddress from jf_cap is just a type alias for VerKey, which serializes with the tag VERKEY,
 // which is confusing. This newtype struct lets us a define a more user-friendly tag.
 #[tagged_blob("ADDR")]
 #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize, PartialEq, Eq, Hash)]
-pub struct UserAddress(pub jf_aap::keys::UserAddress);
+pub struct UserAddress(pub jf_cap::keys::UserAddress);
 
-impl From<jf_aap::keys::UserAddress> for UserAddress {
-    fn from(addr: jf_aap::keys::UserAddress) -> Self {
+impl From<jf_cap::keys::UserAddress> for UserAddress {
+    fn from(addr: jf_cap::keys::UserAddress) -> Self {
         Self(addr)
     }
 }
 
-impl From<UserAddress> for jf_aap::keys::UserAddress {
+impl From<UserAddress> for jf_cap::keys::UserAddress {
     fn from(addr: UserAddress) -> Self {
         addr.0
     }
 }
 
-pub use jf_aap::keys::UserPubKey;
+pub use jf_cap::keys::UserPubKey;
 
 #[tagged_blob("RECPROOF")]
 #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize, PartialEq, Eq)]
-pub struct MerklePath(pub jf_aap::MerklePath);
+pub struct MerklePath(pub jf_cap::MerklePath);
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Eq)]
 pub struct UnspentRecord {
