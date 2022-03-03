@@ -115,7 +115,7 @@ fn respond_with<T: Serialize>(
 /// The Accept header of the request is used to determine the serialization format.
 ///
 /// This function combined with the [add_error_body] middleware defines the server-side protocol
-/// for encoding zerok types in HTTP responses.
+/// for encoding espresso types in HTTP responses.
 pub fn response<T: Serialize, S>(req: &Request<S>, body: T) -> Result<Response, tide::Error> {
     respond_with(&mut Accept::from_headers(req)?, body)
 }
