@@ -1,6 +1,6 @@
-//! # Generic interfaces for Translucence web APIs.
+//! # Generic interfaces for Espresso web APIs.
 //!
-//! All data structures returned by Translucence API endpoints correspond directly to Rust data
+//! All data structures returned by Espresso API endpoints correspond directly to Rust data
 //! structures via the serde serialization and deserialization interfaces. For query responses which
 //! do not directly correspond to data structures elsewhere in the ecosystem, data structures are
 //! defined in this crate which can be serialized to and from the API requests and responses.

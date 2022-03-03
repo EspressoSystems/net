@@ -9,7 +9,7 @@ use surf::{middleware::Next, Client, Request, Response, StatusCode};
 /// The Content-Type header is used to determine the serialization format.
 ///
 /// This function combined with the [parse_error_body] middleware defines the client-side
-/// protocol for decoding zerok types from HTTP responses.
+/// protocol for decoding espresso types from HTTP responses.
 pub async fn response_body<T: for<'de> Deserialize<'de>>(
     res: &mut Response,
 ) -> Result<T, surf::Error> {
