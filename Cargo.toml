@@ -4,6 +4,7 @@ description = "Generic interfaces for Espresso web APIs."
 version = "0.1.0"
 authors = ["Espresso Systems <hello@espressosys.com>"]
 edition = "2018"
+license = "GPL-3.0-or-later"
 
 [dependencies]
 ark-serialize = { version = "0.3.0", features = ["derive"] }
