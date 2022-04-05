@@ -18,7 +18,7 @@ jf-cap = { features=["std"], git = "https://github.com/EspressoSystems/cap.git" 
 jf-utils = { features=["std"], git = "https://github.com/EspressoSystems/jellyfish.git" }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0.61"
-snafu = { version = "0.6.10", features = ["backtraces"] }
+snafu = { version = "0.7", features = ["backtraces"] }
 surf = "2.3.1"
 tagged-base64 = { git = "https://github.com/EspressoSystems/tagged-base64.git", branch = "main"}
 tide = "0.16.0"
