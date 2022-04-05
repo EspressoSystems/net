@@ -27,7 +27,7 @@ pub enum TaggedBlobError {
 impl<T: Tagged + CanonicalDeserialize> TaggedBlob for T {
     fn from_tagged_blob(b64: &TaggedBase64) -> Result<Self, TaggedBlobError> {
         if b64.tag() == Self::tag() {
-            Self::deserialize(&*b64.value()).context(SerError)
+            Self::deserialize(&*b64.value()).context(SerSnafu)
         } else {
             Err(TaggedBlobError::TagMismatch {
                 actual: b64.tag(),
